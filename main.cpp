@@ -88,7 +88,7 @@ void ordenarPorTitulo(Pelicula peliculas[], int cantidad) {
         intercambio = false;
 
         for (int j = 0; j < cantidad - i - 1; j++) {
-            if (peliculas[j].titulo > peliculas[j + 1].titulo) {
+            if (strcmp(peliculas[j].titulo, peliculas[j + 1].titulo) > 0) {
 
                 Pelicula auxiliar = peliculas[j];
                 peliculas[j] = peliculas[j + 1];
