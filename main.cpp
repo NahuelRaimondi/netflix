@@ -81,7 +81,25 @@ void ordenarPorReproducciones(Pelicula peliculas[], int cantidad) {
 }
 
 void ordenarPorTitulo(Pelicula peliculas[], int cantidad) {
-    //TODO implementar ordenamiento
+    bool intercambio = true;
+    int i = 0;
+
+    while (i < cantidad - 1 && intercambio) {
+        intercambio = false;
+
+        for (int j = 0; j < cantidad - i - 1; j++) {
+            if (peliculas[j].titulo > peliculas[j + 1].titulo) {
+
+                Pelicula auxiliar = peliculas[j];
+                peliculas[j] = peliculas[j + 1];
+                peliculas[j + 1] = auxiliar;
+
+                intercambio = true;
+            }
+        }
+        i++;
+    }
+    
 }
 
 void mostrarPeliculas(Pelicula peliculas[], int cantidad) {
